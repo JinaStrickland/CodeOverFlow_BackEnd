@@ -1,3 +1,4 @@
 class Answer < ApplicationRecord
-  belongs_to :solution, polymorphic: true
+  belongs_to :question
+  belongs_to :user
 end

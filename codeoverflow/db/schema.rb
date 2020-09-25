@@ -17,12 +17,10 @@ ActiveRecord::Schema.define(version: 2020_09_24_204816) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body"
-    t.bigint "user_id", null: false
-    t.bigint "question_id", null: false
+    t.integer "user_id"
+    t.integer "question_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
-    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -52,8 +50,6 @@ ActiveRecord::Schema.define(version: 2020_09_24_204816) do
     t.index ["company_id"], name: "index_users_on_company_id"
   end
 
-  add_foreign_key "answers", "questions"
-  add_foreign_key "answers", "users"
   add_foreign_key "questions", "users"
   add_foreign_key "users", "companies"
 end

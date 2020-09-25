@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
     end
 
     def update 
-        @question = Question.update(question_params)
+        @question.update(question_params)
         render json: @question 
     end
 
@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
     private 
 
     def find_question 
-        @question = Question.find_by(params[:id])
+        @question = Question.find_by(id: params[:id])
     end
 
     def question_params

@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
 
-    before_action :show, :update, :destory
+    before_action :find_user, only: [:show, :update, :destory]
 
     def show 
-        @user = User.find_by(params[:id])
         render json: @user
         # only: [:username, :email, :image], 
         #     include: [:questions => {include: :answers, only: [:title, :body, :tag]}]

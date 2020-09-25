@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
 
-    before_action :update, :destroy
+    before_action :find_answer, only: [:update, :destroy]
 
     def index 
         @answers = Answer.all 
@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
         @answer = Answer.find_by(params[:id])
     end
 
-    def anwser_params
+    def answer_params
         params.require(:answer).permit(:body, :tag)
     end
 

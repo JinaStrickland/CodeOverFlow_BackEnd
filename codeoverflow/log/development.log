@@ -3257,3 +3257,342 @@ Processing by AnswersController#index as */*
 Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.3ms | Allocations: 1526)
 
 
+Started GET "/questions" for ::1 at 2020-09-25 12:10:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by QuestionsController#index as */*
+  Parameters: {"user_id"=>2, "question_id"=>1, "body"=>"I am the last answer on CodeOverFlow", "question"=>{"body"=>"I am the last answer on CodeOverFlow", "user_id"=>2}}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 1.3ms | Allocations: 5747)
+
+
+Started GET "/questions/1" for ::1 at 2020-09-25 12:10:49 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "question_id"=>1, "body"=>"I am the last answer on CodeOverFlow", "id"=>"1", "question"=>{"body"=>"I am the last answer on CodeOverFlow", "user_id"=>2}}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 0.9ms | Allocations: 6956)
+
+
+Started GET "/questions/3" for ::1 at 2020-09-25 12:11:01 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "question_id"=>1, "body"=>"I am the last answer on CodeOverFlow", "id"=>"3", "question"=>{"body"=>"I am the last answer on CodeOverFlow", "user_id"=>2}}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 3]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1702)
+
+
+Started GET "/questions/" for ::1 at 2020-09-25 12:11:06 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"user_id"=>2, "question_id"=>1, "body"=>"I am the last answer on CodeOverFlow", "question"=>{"body"=>"I am the last answer on CodeOverFlow", "user_id"=>2}}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1441)
+
+
+Started GET "/questions/" for ::1 at 2020-09-25 12:11:16 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"user_id"=>2, "question_id"=>1, "body"=>"I am the last answer on CodeOverFlow", "question"=>{"body"=>"I am the last answer on CodeOverFlow", "user_id"=>2}}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1441)
+
+
+Started POST "/questions/" for ::1 at 2020-09-25 12:13:28 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by QuestionsController#create as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/questions_controller.rb:15:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:15:in `create'
+  [1m[36mQuestion Create (0.8ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "React front-end and rails back end"], ["body", "How can I send patch request from my react front-end to rails back end?"], ["tag", "react"], ["user_id", 2], ["created_at", "2020-09-25 16:13:28.864601"], ["updated_at", "2020-09-25 16:13:28.864601"]]
+  ↳ app/controllers/questions_controller.rb:15:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/questions_controller.rb:15:in `create'
+Completed 200 OK in 35ms (Views: 0.5ms | ActiveRecord: 4.4ms | Allocations: 15091)
+
+
+Started GET "/questions/6" for ::1 at 2020-09-25 12:13:37 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"6", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 6]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 1.8ms | Allocations: 2996)
+
+
+Started GET "/questions/5" for ::1 at 2020-09-25 12:13:41 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.9ms | Allocations: 5454)
+
+
+Started GET "/users/2" for ::1 at 2020-09-25 12:13:53 -0400
+Processing by UsersController#show as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `find_user'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 937)
+
+
+Started GET "/questions/5" for ::1 at 2020-09-25 12:14:23 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1803)
+
+
+Started DELETE "/questions/5" for ::1 at 2020-09-25 12:14:28 -0400
+Processing by QuestionsController#destroy as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 2347)
+
+
+  
+NoMethodError (undefined method `destory' for #<Question:0x00007fdf0470ec08>
+Did you mean?  destroy):
+  
+app/controllers/questions_controller.rb:25:in `destroy'
+Started GET "/questions/5" for ::1 at 2020-09-25 12:14:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 31ms (Views: 19.3ms | ActiveRecord: 2.2ms | Allocations: 15041)
+
+
+Started DELETE "/questions/5" for ::1 at 2020-09-25 12:15:01 -0400
+Processing by QuestionsController#destroy as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+  [1m[36mQuestion Destroy (2.8ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.7ms | Allocations: 2576)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/questions_controller.rb:25:in `destroy'
+Started GET "/questions/5" for ::1 at 2020-09-25 12:15:23 -0400
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.8ms | Allocations: 1802)
+
+
+Started GET "/questions/5" for ::1 at 2020-09-25 12:19:13 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (1.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 99ms (Views: 23.8ms | ActiveRecord: 25.0ms | Allocations: 11052)
+
+
+Started DELETE "/questions/5" for ::1 at 2020-09-25 12:19:21 -0400
+Processing by QuestionsController#destroy as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+  [1m[36mQuestion Destroy (4.1ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+  [1m[35m (2.9ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 7.2ms | Allocations: 2574)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/questions_controller.rb:25:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (273.0ms)[0m  [1m[35mCREATE DATABASE "project_development" ENCODING = 'unicode'[0m
+  [1m[35m (148.4ms)[0m  [1m[35mCREATE DATABASE "project_test" ENCODING = 'unicode'[0m
+  [1m[35m (54.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(279088437195799245)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompanies (20200924203241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "companies" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (7.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200924203241"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20200924203846)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "image" character varying, "company_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7682a3bdfe"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_company_id" ON "users"  ("company_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200924203846"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateQuestions (20200924204047)
+  [1m[35m (13.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "title" text, "body" text, "tag" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_047ab75908"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE  INDEX  "index_questions_on_user_id" ON "questions"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200924204047"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAnswers (20200924204816)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "answers" ("id" bigserial primary key, "body" text, "user_id" bigint NOT NULL, "question_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_584be190c2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_3d5ed4418f"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_answers_on_user_id" ON "answers"  ("user_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_answers_on_question_id" ON "answers"  ("question_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200924204816"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-25 16:38:49.674987"], ["updated_at", "2020-09-25 16:38:49.674987"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(279088437195799245)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (1.2ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CodeOverFlow"], ["created_at", "2020-09-25 16:39:10.849112"], ["updated_at", "2020-09-25 16:39:10.849112"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "valda"], ["email", "erwin@tromp.io"], ["password_digest", "abcd"], ["company_id", 1], ["created_at", "2020-09-25 16:39:11.192054"], ["updated_at", "2020-09-25 16:39:11.192054"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "jeane"], ["email", "dong_okeefe@morissette-koelpin.org"], ["password_digest", "abcd"], ["company_id", 1], ["created_at", "2020-09-25 16:39:11.199859"], ["updated_at", "2020-09-25 16:39:11.199859"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Nobis harum architecto. Voluptatem placeat corporis."], ["body", "Perspiciatis est ea. Voluptatem eum voluptatem. Et mollitia commodi. Non eveniet autem. Eaque quaerat velit. Quia fuga doloribus."], ["tag", "rails"], ["user_id", 1], ["created_at", "2020-09-25 16:39:11.213349"], ["updated_at", "2020-09-25 16:39:11.213349"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Eos ea delectus. Molestiae ducimus blanditiis."], ["body", "Cum harum omnis. Laudantium eos nesciunt. Recusandae expedita eligendi. Autem minus veritatis. Mollitia debitis et. Amet minima velit."], ["tag", "python"], ["user_id", 1], ["created_at", "2020-09-25 16:39:11.218501"], ["updated_at", "2020-09-25 16:39:11.218501"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Et aut voluptatem. Sit ipsum voluptates."], ["body", "Magnam aut dolor. Et dolore labore. Quo sit aut. Delectus nemo qui. Qui minima facilis. Vero id ut."], ["tag", "react"], ["user_id", 1], ["created_at", "2020-09-25 16:39:11.224473"], ["updated_at", "2020-09-25 16:39:11.224473"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Molestias id nisi. Veniam ducimus qui."], ["body", "Quas totam aut. Harum debitis ipsum. Voluptatem dolore velit. Dolor quas vel. Non sapiente eveniet. Ipsum fuga animi."], ["tag", "javascript"], ["user_id", 2], ["created_at", "2020-09-25 16:39:11.229802"], ["updated_at", "2020-09-25 16:39:11.229802"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Quidem quia sunt. Dolor minima ipsum."], ["body", "Perspiciatis nulla inventore. Et id error. Eveniet blanditiis vel. Id beatae porro. Quia aliquid fuga. Dolorem rem doloremque."], ["tag", "javascript"], ["user_id", 1], ["created_at", "2020-09-25 16:39:11.234767"], ["updated_at", "2020-09-25 16:39:11.234767"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAnswer Create (0.7ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Non veniam saepe. Aut sunt placeat. Sunt itaque ut. Aut odit praesentium."], ["user_id", 2], ["question_id", 3], ["created_at", "2020-09-25 16:39:11.258586"], ["updated_at", "2020-09-25 16:39:11.258586"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Quis minus qui. Occaecati asperiores tempora. Ipsum laborum explicabo. Vel et reiciendis."], ["user_id", 1], ["question_id", 3], ["created_at", "2020-09-25 16:39:11.269669"], ["updated_at", "2020-09-25 16:39:11.269669"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Accusamus qui perferendis. Enim illum impedit. Nam et vel. Voluptatem maxime amet."], ["user_id", 1], ["question_id", 1], ["created_at", "2020-09-25 16:39:11.278877"], ["updated_at", "2020-09-25 16:39:11.278877"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Repellat ut distinctio. Suscipit quos qui. Minus alias quaerat. Qui et natus."], ["user_id", 1], ["question_id", 1], ["created_at", "2020-09-25 16:39:11.288385"], ["updated_at", "2020-09-25 16:39:11.288385"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Nemo delectus assumenda. Aut necessitatibus aut. Soluta reiciendis autem. Accusamus et modi."], ["user_id", 1], ["question_id", 1], ["created_at", "2020-09-25 16:39:11.296480"], ["updated_at", "2020-09-25 16:39:11.296480"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/questions/5" for ::1 at 2020-09-25 12:43:46 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#show as */*
+  Parameters: {"user_id"=>2, "tag"=>"react", "body"=>"How can I send patch request from my react front-end to rails back end?", "title"=>"React front-end and rails back end", "id"=>"5", "question"=>{"title"=>"React front-end and rails back end", "body"=>"How can I send patch request from my react front-end to rails back end?", "tag"=>"react", "user_id"=>2}}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 5]]
+  ↳ app/controllers/questions_controller.rb:11:in `show'
+Completed 200 OK in 32ms (Views: 17.4ms | ActiveRecord: 9.4ms | Allocations: 9520)
+
+
+Started DELETE "/questions/5" for ::1 at 2020-09-25 12:44:04 -0400
+Processing by QuestionsController#destroy as */*
+  Parameters: {"id"=>"5", "question"=>{}}
+  [1m[36mQuestion Load (12.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:32:in `find_question'
+  [1m[35m (10.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+  [1m[36mQuestion Destroy (5.7ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/questions_controller.rb:25:in `destroy'
+Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 29.7ms | Allocations: 2550)
+
+
+Started GET "/questions/" for ::1 at 2020-09-25 12:44:31 -0400
+Processing by QuestionsController#index as */*
+  Parameters: {"question"=>{}}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1287)
+
+

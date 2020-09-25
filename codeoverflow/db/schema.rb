@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2020_09_24_204816) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
     t.text "body"
-    t.integer "user_id", null: false
-    t.integer "question_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_09_24_204816) do
     t.text "title"
     t.text "body"
     t.string "tag"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_09_24_204816) do
     t.string "email"
     t.string "password_digest"
     t.string "image"
-    t.integer "company_id", null: false
+    t.bigint "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_users_on_company_id"

@@ -22,8 +22,8 @@ class QuestionsController < ApplicationController
     end
 
     def destroy 
-        @question.destory 
-            render json: "Question has been deleted"
+        @question.destroy
+        render json: "Question has been deleted"
     end
 
     private 
@@ -33,6 +33,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-        params.require(:question).permit(:title, :body, :tag)
+        params.require(:question).permit(:title, :body, :tag, :user_id)
     end
 end

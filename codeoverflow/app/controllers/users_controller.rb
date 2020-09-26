@@ -8,10 +8,7 @@ class UsersController < ApplicationController
     end
 
     def show 
-        render json: @user
-        # render json: "THis is the users"
-        # only: [:username, :email, :image], 
-        #     include: [:questions => {include: :answers, only: [:title, :body, :tag]}]
+        render json: @user, only: [:username, :email, :image], include: [:questions => {include: :answers, only: [:title, :body, :tag]}]
     end
 
     def create

@@ -22698,3 +22698,29 @@ Processing by UsersController#index as */*
 Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 2362)
 
 
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Load (2.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (29.7ms)[0m  [1m[33mUPDATE "users" SET "image" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["image", "https://lh3.googleusercontent.com/GPC-DPV91Mp3j7-eFT8Tcs1DG9nZt3QZg7aXbYlhpuX4ec3U58UE8EcmUbCf1ZmnEc8"], ["updated_at", "2020-09-28 15:55:38.788739"], ["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 11]]
+  [1m[36mQuestion Load (2.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 11]]
+  [1m[35m (8.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mQuestion Update (4.8ms)[0m  [1m[33mUPDATE "questions" SET "user_id" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["user_id", 10], ["updated_at", "2020-09-28 15:57:22.620268"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+    # skip_before_action :logged_in?, only: [:create]
     before_action :find_user, only: [:show, :update, :destroy]
 
     def index

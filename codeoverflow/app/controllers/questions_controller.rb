@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
 
     def index 
         @questions = Question.all 
-        render json: @questions, only: [:id, :title, :body, :tag, :user_id], include: [:answers => {only: [:body]} ]
+        render json: @questions, only: [:id, :title, :body, :tag, :user_id], include: [:answers => {only: [:body, :user_id]}, :user => {only: [:username, :image]} ]
     end
 
     def show 

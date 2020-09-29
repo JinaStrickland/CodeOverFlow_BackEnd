@@ -42,7 +42,7 @@ private
     end
 
     def user_params 
-        params.require(:user).permit(:username, :email, :password, :image, :company_id)
+        params.require(:user).permit(:username, :email, :password, :image, :company)
     end
 
 end

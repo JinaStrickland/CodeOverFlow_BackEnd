@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
 
     before_action :find_answer, only: [:show, :update, :destroy]
+    skip_before_action :logged_in?, only: [:index, :show]
 
     def index 
         @answers = Answer.all 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    # skip_before_action :logged_in?, only: [:create]
+    skip_before_action :logged_in?, only: [:create]
     before_action :find_user, only: [:show, :update, :destroy]
 
     def index
@@ -14,15 +14,15 @@ class UsersController < ApplicationController
 
     def create
         user = User.new(user_params)
-        user.save 
-        render json: user
+        # user.save 
+        # render json: user
 
-        # if user.valid?
-            # render json: { user: user }, status: :created 
+        if user.valid?
+            render json: { user: user }, status: :created 
 
-        # else
-        #     render json: { error: "Failed to create a user" }, status: 404
-        # end
+        else
+            render json: { error: "Failed to create a user" }, status: 404
+        end
     end
 
     def update 

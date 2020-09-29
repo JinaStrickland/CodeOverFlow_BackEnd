@@ -1,14 +1,17 @@
 class QuestionsController < ApplicationController
 
     before_action :find_question, only: [:show, :update, :destroy]
+    skip_before_action :logged_in?, only: [:index, :show]
 
     def index 
         @questions = Question.all 
-        render json: @questions, only: [:id, :title, :body, :tag, :user_id], include: [:answers => {only: [:body, :user_id]}, :user => {only: [:username, :image]} ]
+        render json: @questions, only: [:id, :title, :body, :tag], 
+            include: [:answers => {only: [:body, :user_id]}, :user => {only: [:username, :image, :id]} ]
     end
 
     def show 
-        render json: @question, only: [:id, :title, :body, :tag, :user_id], include: [:answers => {only: [:body, :user_id]}, :user => {only: [:username, :image]} ]
+        render json: @question, only: [:id, :title, :body, :tag], 
+            include: [:answers => {only: [:body, :user_id]}, :user => {only: [:username, :image, :id]} ]
     end
     
     def create 

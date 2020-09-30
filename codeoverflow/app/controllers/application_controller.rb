@@ -13,12 +13,12 @@ class ApplicationController < ActionController::API
 
         begin
             user_id = JWT.decode(token, "codeoverflowapp")[0]["user_id"]
-            user = User.find_by(id: user_id)
+            @user = User.find_by(id: user_id)
         rescue 
-            user = nil
+            @user = nil
         end
 
-        unless user
+        unless @user
             render json: {error: "Please Login!"}
         end 
     end

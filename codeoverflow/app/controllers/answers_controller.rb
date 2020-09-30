@@ -13,7 +13,10 @@ class AnswersController < ApplicationController
     end
 
     def create 
-        @answer = Answer.create(answer_params)
+        byebug
+        # @answer = Answer.create(answer_params)
+        @answer = Answer.create(body: params[:answer][:body], user_id: @user.id)
+        # @answer = Answer.create(body: params[:answer][:body])
         render json: @answer 
     end
 
@@ -34,7 +37,7 @@ class AnswersController < ApplicationController
     end
 
     def answer_params
-        params.require(:answer).permit(:body, :user_id, :question_id)
+        params.require(:answer).permit(:body, :question_id)
     end
 
 end

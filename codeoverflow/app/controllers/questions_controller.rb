@@ -15,8 +15,9 @@ class QuestionsController < ApplicationController
     end
     
     def create 
-        @question = Question.create(question_params)
-        render json: @question 
+        # byebug
+        @question = Question.create(title: params[:question][:title], body: params[:question][:body], tag: params[:question][:tag], user_id: @user.id)
+        render json: @question, include: [:answers => {only: [:body, :user_id]}, :user => {only: [:username, :image, :id]} ]
     end
 
     def update 
@@ -36,6 +37,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-        params.require(:question).permit(:title, :body, :tag, :user_id)
+        params.require(:question).permit(:title, :body, :tag)
     end
 end

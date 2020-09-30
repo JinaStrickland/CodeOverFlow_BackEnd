@@ -49278,3 +49278,88 @@ Processing by QuestionsController#index as */*
 Completed 200 OK in 2077ms (Views: 499.9ms | ActiveRecord: 1569.8ms | Allocations: 33812)
 
 
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCompany Load (14.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (24.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."company_id" = $1[0m  [["company_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (1.0ms)[0m  [1m[32mINSERT INTO "companies" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "CodeOverFlow"], ["created_at", "2020-09-29 19:38:39.260407"], ["updated_at", "2020-09-29 19:38:39.260407"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "image", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "Jina Smith"], ["email", "jina@gmail.com"], ["password_digest", "jina"], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTujUAbrUr4nk7BtPYpfy4llFW03uxz0bCTqg&usqp=CAU"], ["company_id", 2], ["created_at", "2020-09-29 19:38:39.306092"], ["updated_at", "2020-09-29 19:38:39.306092"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "image", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "Solomon Yard"], ["email", "solomon@gmail.com"], ["password_digest", "solomon"], ["image", "https://john-darke.co.uk/wp-content/uploads/2019/04/male-image.jpg"], ["company_id", 2], ["created_at", "2020-09-29 19:38:39.311809"], ["updated_at", "2020-09-29 19:38:39.311809"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "image", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "Jane May"], ["email", "jane@gmail.com"], ["password_digest", "jane"], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTAf_DARs3j-x3klIyxyDanfMFShffMn0LrCw&usqp=CAU"], ["company_id", 2], ["created_at", "2020-09-29 19:38:39.315090"], ["updated_at", "2020-09-29 19:38:39.315090"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "image", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "Bob Williams"], ["email", "bob@gmail.com"], ["password_digest", "bob"], ["image", "https://www.latrobemassagecentre.com.au/wp-content/uploads/2016/04/Male-Image.jpg"], ["company_id", 2], ["created_at", "2020-09-29 19:38:39.318454"], ["updated_at", "2020-09-29 19:38:39.318454"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "image", "company_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "Suzy Jones"], ["email", "suzy@gmail.com"], ["password_digest", "suzy"], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTujUAbrUr4nk7BtPYpfy4llFW03uxz0bCTqg&usqp=CAU"], ["company_id", 2], ["created_at", "2020-09-29 19:38:39.322725"], ["updated_at", "2020-09-29 19:38:39.322725"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "What do these three dots in React do?"], ["body", "What does the ... do in React code and what is it called?  {...this.props}"], ["tag", "React"], ["user_id", 11], ["created_at", "2020-09-29 19:38:39.335028"], ["updated_at", "2020-09-29 19:38:39.335028"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Rails Controller Constant"], ["body", "Is there anything as \"Controller Constant\" in Rails?  If yes, how and where do we use it?  And what will be the varieties of constants like model, controller, etc."], ["tag", "Rails"], ["user_id", 11], ["created_at", "2020-09-29 19:38:39.339040"], ["updated_at", "2020-09-29 19:38:39.339040"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Number in the array that are not divisible by 3 or 5?"], ["body", "How do I display the number in the array that are not divisible by 3 or 5?"], ["tag", "Ruby"], ["user_id", 12], ["created_at", "2020-09-29 19:38:39.352375"], ["updated_at", "2020-09-29 19:38:39.352375"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "What is the difference between state and props in React?"], ["body", "Can props and state can change and when should we use state?"], ["tag", "React"], ["user_id", 12], ["created_at", "2020-09-29 19:38:39.355900"], ["updated_at", "2020-09-29 19:38:39.355900"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "How to remove unwanted character using hash in Ruby?"], ["body", "How do I remove the wnated character in Ruby using hash?"], ["tag", "Ruby"], ["user_id", 13], ["created_at", "2020-09-29 19:38:39.359114"], ["updated_at", "2020-09-29 19:38:39.359114"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "What's the difference between ||= and |= with booleans"], ["body", "I understaqnd that a ||= b behaves like a || a = b and that a |= b behaves like a = a | b.  When working with booleans, does it make a difference which you use?"], ["tag", "Ruby"], ["user_id", 13], ["created_at", "2020-09-29 19:38:39.362209"], ["updated_at", "2020-09-29 19:38:39.362209"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "How do I return the response from an asynchronous call?"], ["body", "I have a function which makes an asynchronous request. How can I return the response from this function? I tried returning the value from the callback, as well as assigning the result to a local variable inside the function and returning that one, but none of those ways actually return the response."], ["tag", "Java Script"], ["user_id", 14], ["created_at", "2020-09-29 19:38:39.365599"], ["updated_at", "2020-09-29 19:38:39.365599"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Why console.log is printing two times on first render"], ["body", "I created a component and inside that I have a on click function and I have a console statement. Can anyone explain why it is displaying two times on the render?"], ["tag", "React"], ["user_id", 14], ["created_at", "2020-09-29 19:38:39.368684"], ["updated_at", "2020-09-29 19:38:39.368684"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("title", "body", "tag", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "How to change video js source with a link click"], ["body", "How can I change video source by clicking on one of my links?  I undertand that I have to use event listeners and just change the <source> depending on what link I click, but I am not that good at programing or googeling. The video player I am using is \"video js\""], ["tag", "Java Script"], ["user_id", 15], ["created_at", "2020-09-29 19:38:39.371873"], ["updated_at", "2020-09-29 19:38:39.371873"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "{...this.props} spreads out the \"own\" enumerable properties in props as discrete properties you are creating."], ["user_id", 11], ["question_id", 18], ["created_at", "2020-09-29 19:38:39.384508"], ["updated_at", "2020-09-29 19:38:39.384508"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "The three dots represent the Speard Operator. It allows us to do few things in Javascript: concatenate array, destructuring an array, and combining two objects."], ["user_id", 12], ["question_id", 18], ["created_at", "2020-09-29 19:38:39.388086"], ["updated_at", "2020-09-29 19:38:39.388086"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Props and state are related.  The state of component will often become the props of a child component.  Props are passed to the child within the render method of the parent as the second argument."], ["user_id", 15], ["question_id", 21], ["created_at", "2020-09-29 19:38:39.391717"], ["updated_at", "2020-09-29 19:38:39.391717"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Use state to store the data your current page needs in your controller-view.  Use props to pass data and event handlers down to your child components.  Props are immutable and state is mutable"], ["user_id", 13], ["question_id", 21], ["created_at", "2020-09-29 19:38:39.395350"], ["updated_at", "2020-09-29 19:38:39.395350"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "If the input is not extremely long, String#gsub would do.  It's always better to whitelist wanted character, rather than blacklist unwanted ones.  String.gsub(/[^w =()]+/, '') "], ["user_id", 14], ["question_id", 22], ["created_at", "2020-09-29 19:38:39.398822"], ["updated_at", "2020-09-29 19:38:39.398822"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "That's not quite right.  In general the x= operator behaves like A = A X B where X is one of the supported operators.  Notably it's always on the right side of the ==. The | version is typically understood to do binary math.  Whereas || a higher leverl logical test on the truthiness of values. In Ruby only nil and false are considered non-truthful, all other values are considered truthful."], ["user_id", 13], ["question_id", 23], ["created_at", "2020-09-29 19:38:39.402631"], ["updated_at", "2020-09-29 19:38:39.402631"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "You are using Ajax incorrectly. The idea is not to have it return anything, but instead hand off the data to something called a callback function, which handles the data. Returning anything in the submit handler will not do anything. You must instead either hand off the data, or do what you want with it directly inside the success function."], ["user_id", 11], ["question_id", 24], ["created_at", "2020-09-29 19:38:39.408054"], ["updated_at", "2020-09-29 19:38:39.408054"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Another approach to return a value from an asynchronous function is to pass in an object that will store the result from the asynchronous function."], ["user_id", 12], ["question_id", 24], ["created_at", "2020-09-29 19:38:39.419861"], ["updated_at", "2020-09-29 19:38:39.419861"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "One is printing immediately because of the function, and the other one is because of the React.strictMode in the index.js file. I would remove the <React.StrictMode> from index.js and it should render once."], ["user_id", 12], ["question_id", 25], ["created_at", "2020-09-29 19:38:39.422761"], ["updated_at", "2020-09-29 19:38:39.422761"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Take a look at this link. \"https://stackoverflow.com/questions/27140952/how-to-change-video-source-onclick\" "], ["user_id", 11], ["question_id", 26], ["created_at", "2020-09-29 19:38:39.425808"], ["updated_at", "2020-09-29 19:38:39.425808"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("body", "user_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "It would be easier to give your <source> object an ID.  Then reference the object by the ID using document.getElementById and document.addEventLister"], ["user_id", 13], ["question_id", 26], ["created_at", "2020-09-29 19:38:39.428993"], ["updated_at", "2020-09-29 19:38:39.428993"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m

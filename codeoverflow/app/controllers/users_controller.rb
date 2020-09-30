@@ -14,15 +14,15 @@ class UsersController < ApplicationController
 
     def create
         user = User.new(user_params)
-        # user.save 
-        # render json: user
+        user.save 
+        render json: user
 
-        if user.valid?
-            render json: { user: user }, status: :created 
+        # if user.valid?
+        #     render json: { user: user }, status: :created 
 
-        else
-            render json: { error: "Failed to create a user" }, status: 404
-        end
+        # else
+        #     render json: { error: "Failed to create a user" }, status: 404
+        # end
     end
 
     def update 
@@ -42,7 +42,7 @@ private
     end
 
     def user_params 
-        params.require(:user).permit(:username, :email, :password, :image, :company)
+        params.require(:user).permit(:username, :email, :password, :image, :company_id)
     end
 
 end

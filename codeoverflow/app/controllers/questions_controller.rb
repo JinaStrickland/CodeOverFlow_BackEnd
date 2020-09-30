@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
 
     def destroy 
         @question.destroy
-        render json: "Question has been deleted"
+        render json: {message: "Question has been deleted"}
     end
 
     private 

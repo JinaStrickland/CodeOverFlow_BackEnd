@@ -13,11 +13,9 @@ class AnswersController < ApplicationController
     end
 
     def create 
-        byebug
-        # @answer = Answer.create(answer_params)
-        @answer = Answer.create(body: params[:answer][:body], user_id: @user.id)
-        # @answer = Answer.create(body: params[:answer][:body])
-        render json: @answer 
+        # byebug
+        @answer = Answer.create(body: params[:answer][:body], question_id: params[:answer][:question_id], user_id: @user.id)
+        render json: @answer, include: [:user, :question]
     end
 
     def update 
